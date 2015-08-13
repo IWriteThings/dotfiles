@@ -8,7 +8,7 @@ source .bash_prompt
 # Start TMUX on all
 # If not running interactively, do not do anything
 [[ $- != *i* ]] && return
-[[ -z "$TMUX" ]] && exec tmux
+[[ -z "$TMUX" ]] && exec tmux -2
 
 # Aliases
 alias ..='cd ..'
@@ -33,7 +33,9 @@ if [ "$(uname)" == "Darwin" ]; then
 	# Extra Stuff
 	source .bash_work_aliases
 fi
+
 # Linux - Ubuntu
+# Linux boxes need love too
 if [ "$(uname)" == "Linux" ]; then
 	export TERM="xterm-256color"
 	eval `dircolors ~/.dircolors`
