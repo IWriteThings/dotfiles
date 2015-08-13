@@ -33,3 +33,7 @@ if [ "$(uname)" == "Darwin" ]; then
 	# Extra Stuff
 	source .bash_work_aliases
 fi
+# Linux - Ubuntu
+if [ "$(uname)" == "Linux" ]; then
+	export TERM="xterm-256color"
+fi
