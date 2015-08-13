@@ -105,7 +105,7 @@ set colorcolumn=80
 " More tabs
 set tabpagemax=50
 " Add the language tool
-let g:languagetool_jar='~/Dropbox/linux/.vim/LanguageTool/languagetool-commandline.jar'
+let g:languagetool_jar='~/.vim/LanguageTool/languagetool-commandline.jar'
 " Twiddle Case
 function! TwiddleCase(str)
   if a:str ==# toupper(a:str)
