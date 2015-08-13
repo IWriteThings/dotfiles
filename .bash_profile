@@ -36,4 +36,5 @@ fi
 # Linux - Ubuntu
 if [ "$(uname)" == "Linux" ]; then
 	export TERM="xterm-256color"
+	eval `dircolors ~/.dircolors`
 fi
