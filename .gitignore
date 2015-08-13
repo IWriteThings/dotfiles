@@ -1,0 +1,10 @@
+.DS_Store
+*.lock
+*.swp
+.vpnc-script
+.bash_work_aliases
+.openconnect
+.extras/
+.vim/
+.newsbeuter/
+.grunt-init/
