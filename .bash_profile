@@ -23,6 +23,11 @@ alias scan='clamscan -v -i'
 # Create a tar.gz file
 alias tarup='tar -cvzf'
 
+# If exists, load bash_aliases
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
 # Darwin - Macintosh - Apple
 # If we are running on Mac, we need to do Mac things.
 if [ "$(uname)" == "Darwin" ]; then
