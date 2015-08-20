@@ -1,3 +1,5 @@
+# Force a color prompt
+force_color_prompt=yes
 # Source my rvm stuff
 source .profile
 # Source functions used by bash
@@ -16,10 +18,15 @@ alias disk='df -H'
 alias news='newsbeuter'
 ## Pull from youtube
 alias musicrip='youtube-dl --extract-audio --audio-format mp3'
+#clamav
+alias scan='clamscan -v -i'
+# Create a tar.gz file
+alias tarup='tar -cvzf'
 
 # Darwin - Macintosh - Apple
 # If we are running on Mac, we need to do Mac things.
 if [ "$(uname)" == "Darwin" ]; then
+	export GOPATH=/Users/aaron/.gocode
 	# Allow bash completion with brew
 	if [ -f `brew --prefix`/etc/bash_completion ]; then
 		    . `brew --prefix`/etc/bash_completion
