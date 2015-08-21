@@ -1,11 +1,11 @@
 # Force a color prompt
 force_color_prompt=yes
 # Source my rvm stuff
-source .profile
+source ~/.profile
 # Source functions used by bash
-source .bash_functions
+source ~/.bash_functions
 # Source prompt and color
-source .bash_prompt
+source ~/.bash_prompt
 
 # Start TMUX on all
 # If not running interactively, do not do anything
@@ -43,7 +43,7 @@ if [ "$(uname)" == "Darwin" ]; then
 	# initialize jenv for managing multiple environments
 	eval "$(jenv init -)"
 	# Extra Stuff
-	source .bash_work_aliases
+	source ~/.bash_work_aliases
 fi
 
 # Linux - Ubuntu
