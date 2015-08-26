@@ -47,6 +47,9 @@ http://www.linux.com/feeds/all-content linux
 https://www.ruby-lang.org/en/feeds/news.rss ruby
 # Windows & Microsoft
 http://www.lovemysurface.net/feed/# microsoft
+http://news.thewindowsclub.com/feed/
 # Aggregators
 https://news.ycombinator.com/rss
 http://feeds.arstechnica.com/arstechnica/index
+# Web Development
+https://feeds.feedblitz.com/scotch_io
