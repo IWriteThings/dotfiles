@@ -42,6 +42,8 @@ if [ "$(uname)" == "Darwin" ]; then
 	export EDITOR=/usr/local/bin/vim
 	# initialize jenv for managing multiple environments
 	eval "$(jenv init -)"
+	# Run all updates for Mac
+	alias doupdate='brew update && brew upgrade --all && softwareupdate -a -i -v'
 	# Extra Stuff
 	source ~/.bash_work_aliases
 fi
