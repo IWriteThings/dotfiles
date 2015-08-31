@@ -35,6 +35,8 @@ http://www.jgram.org/rss/jlpt4.xml
 http://feeds.feedburner.com/blogspot/hsDu android
 # GitHub Users
 https://github.com/IWriteThings.atom
+http://iwritethings.github.io/feed.xml
+https://github.com/twbs.atom
 # Security
 https://www.schneier.com/blog/atom.xml security
 http://www.intego.com/mac-security-blog/feed/ security
@@ -48,8 +50,22 @@ https://www.ruby-lang.org/en/feeds/news.rss ruby
 # Windows & Microsoft
 http://www.lovemysurface.net/feed/# microsoft
 http://news.thewindowsclub.com/feed/
+http://blogs.windows.com/feed/
 # Aggregators
 https://news.ycombinator.com/rss
 http://feeds.arstechnica.com/arstechnica/index
 # Web Development
 https://feeds.feedblitz.com/scotch_io
+https://feeds.feedburner.com/vagrantup
+http://feeds.feedburner.com/GDBcode
+http://feeds.feedburner.com/ILoveTypography
+http://feeds2.feedburner.com/html5doctor
+http://feeds.feedburner.com/CssTricks
+http://blog.chromium.org/feeds/posts/default
+http://feeds.feedburner.com/456bereastreet
+https://hacks.mozilla.org/feed/
+https://vasilis.nl/dailynerd/feed/
+http://www.smashingmagazine.com/feed/
+http://feeds.granneman.com/granneme
+http://feeds.feedburner.com/littlebigdetails
+http://feeds.feedburner.com/usabilitygeek
