@@ -45,6 +45,8 @@ http://www.darkreading.com/rss_simple.asp
 # Ubuntu & Linux
 http://feeds.feedburner.com/ubuntu-news linux
 http://www.linux.com/feeds/all-content linux
+http://armservers.com/feed/
+https://blog.scaleway.com/rss/
 # Ruby
 https://www.ruby-lang.org/en/feeds/news.rss ruby
 # Windows & Microsoft
@@ -54,6 +56,7 @@ http://blogs.windows.com/feed/
 # Aggregators
 https://news.ycombinator.com/rss
 http://feeds.arstechnica.com/arstechnica/index
+http://feeds.feedburner.com/TechCrunch/
 # Web Development
 https://feeds.feedblitz.com/scotch_io
 https://feeds.feedburner.com/vagrantup
