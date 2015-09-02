@@ -100,6 +100,13 @@ func! WordProcessorMode()
   nnoremap k gk
 endfu 
 com! WP call WordProcessorMode()
+" Crunch multi line text into single line
+function! Crunch() abort
+	normal! G
+	normal! o
+	g/^./ .,/^$/-1 join
+endfunction
+com! CRUNCH call Crunch()
 " Enable a color column
 set colorcolumn=80
 " More tabs
