@@ -62,4 +62,6 @@ if [ "$(uname)" == "Linux" ]; then
 	alias ll='ls -alF'
 	alias la='ls -A'
 	alias l='ls -CF'
+	# Set the vim installed by homebrew as our editor of choice
+	export EDITOR=/usr/bin/vim
 fi
