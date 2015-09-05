@@ -31,7 +31,8 @@ else
 	yellow="\e[1;33m";
 fi;
 ORIG=$PS1
-PS1="\[${txtund}${green}\]LOCAL\[\[${reset}\]";
+HOST=$HOSTNAME
+PS1="\[${txtund}${green}\]${HOST}\[\[${reset}\]";
 PS1+="\$(prompt_git \"\[${white}\] on \[${violet}\]\")";
 PS1+="\[${reset}\]";
 PS1+="\[ at - ${orange}\W\]";
