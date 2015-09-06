@@ -64,4 +64,7 @@ if [ "$(uname)" == "Linux" ]; then
 	alias l='ls -CF'
 	# Set the vim installed by homebrew as our editor of choice
 	export EDITOR=/usr/bin/vim
+	# Use xclip like pbcopy under the mac
+	alias pbcopy='xclip -selection clipboard'
+	alias pbpaste='xclip -selection clipboard -o'
 fi
