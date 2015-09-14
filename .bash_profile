@@ -22,6 +22,9 @@ alias musicrip='youtube-dl --extract-audio --audio-format mp3'
 alias scan='clamscan -v -i'
 # Create a tar.gz file
 alias tarup='tar -cvzf'
+# Add HUB as an overlay to Git
+# https://github.com/github/hub
+eval "$(hub alias -s)"
 
 # If exists, load bash_aliases
 if [ -f ~/.bash_aliases ]; then
