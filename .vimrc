@@ -90,6 +90,7 @@ func! WordProcessorMode()
   setlocal formatoptions+=t
   setlocal noexpandtab 
   setlocal spell spelllang=en_us 
+  setlocal spellfile=$HOME/.vim/spell/en.utf-8.add
   setlocal noautoindent
   setlocal nosmartindent
   setlocal complete+=s
