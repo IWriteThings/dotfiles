@@ -46,7 +46,7 @@ if [ "$(uname)" == "Darwin" ]; then
 	# initialize jenv for managing multiple environments
 	eval "$(jenv init -)"
 	# Run all updates for Mac
-	alias doupdate='brew update; brew upgrade --all; softwareupdate -a -i -v; vim +PluginUpdate +qall;freshclam;'
+	alias doupdate='brew update; brew upgrade --all; softwareupdate -a -i -v; vim +PluginUpdate +qall;freshclam; ~/.tmux/plugins/tpm/bin/update_plugins all;'
 	# Extra Stuff
 	source ~/.bash_work_aliases
 fi
