@@ -52,7 +52,7 @@ filetype plugin indent on    " required
 " Adds the wordpress tags to omnicomplete
 " Run 'ctags -R . ' in WP directory on each update
 " Get ctags if you don't have it
-set tags=tags,~/.vim/mytags/framework/wptags
+set tags=tags,$HOME/.vim/mytags/framework/wptags
 set hlsearch
 set encoding=utf-8  " The encoding displayed.
 set fileencoding=utf-8  " The encoding written to file.
@@ -80,6 +80,7 @@ set backspace=indent,eol,start
 " Syntax highlight
 if &t_Co >= 256 || has("gui_running")
 	colorscheme vividchalk
+	autocmd ColorScheme vividchalk  highlight Search cterm=NONE ctermfg=grey ctermbg=blue
 endif
 if &t_Co > 2 || has("gui_running")
 	syntax on
@@ -222,3 +223,7 @@ let g:ycm_filetype_blacklist = {
 " RUBY STUFF
 " Change the tab behavior for ruby files
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2 expandtab
+
+" Press Space to turn off highlighting and clear any message already
+" displayed.
+:nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>

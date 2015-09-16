@@ -34,7 +34,7 @@ fi
 # Darwin - Macintosh - Apple
 # If we are running on Mac, we need to do Mac things.
 if [ "$(uname)" == "Darwin" ]; then
-	export GOPATH=/Users/aaron/.gocode
+	export GOPATH=$HOME/.gocode
 	# Allow bash completion with brew
 	if [ -f `brew --prefix`/etc/bash_completion ]; then
 		    . `brew --prefix`/etc/bash_completion
@@ -70,5 +70,5 @@ if [ "$(uname)" == "Linux" ]; then
 	# Use xclip like pbcopy under the mac
 	alias pbcopy='xclip -selection clipboard'
 	alias pbpaste='xclip -selection clipboard -o'
-	export GOPATH=/home/aaron/.gocode
+	export GOPATH=$HOME/.gocode
 fi
