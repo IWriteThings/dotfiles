@@ -70,4 +70,5 @@ if [ "$(uname)" == "Linux" ]; then
 	# Use xclip like pbcopy under the mac
 	alias pbcopy='xclip -selection clipboard'
 	alias pbpaste='xclip -selection clipboard -o'
+	export GOPATH=/home/aaron/.gocode
 fi
