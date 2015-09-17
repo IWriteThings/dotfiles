@@ -33,6 +33,8 @@ http://www.jgram.org/rss/jlpt3.xml
 http://www.jgram.org/rss/jlpt4.xml
 # Android
 http://feeds.feedburner.com/blogspot/hsDu android
+# Small Computing
+https://www.raspberrypi.org/feed/
 # GitHub Users
 https://github.com/IWriteThings.atom
 http://iwritethings.github.io/feed.xml
@@ -57,6 +59,8 @@ http://research.microsoft.com/rss/news.xml
 # AMD
 http://developer.amd.com/feed/
 http://ir.amd.com/corporate.rss?c=74093&Rule=Cat=news~subcat=ALL
+# Intel
+http://feeds.feedburner.com/IntelBlogs
 # Aggregators
 https://news.ycombinator.com/rss
 http://feeds.arstechnica.com/arstechnica/index
