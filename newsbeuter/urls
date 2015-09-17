@@ -49,6 +49,10 @@ http://feeds.feedburner.com/ubuntu-news linux
 http://www.linux.com/feeds/all-content linux
 http://armservers.com/feed/
 https://blog.scaleway.com/rss/
+# BSD
+http://feeds.feedburner.com/FreebsdFoundation
+http://feeds.freebsdish.org/PlanetFreeBSD
+http://www.freebsdblog.org/feed/
 # Ruby
 https://www.ruby-lang.org/en/feeds/news.rss ruby
 # Windows & Microsoft
