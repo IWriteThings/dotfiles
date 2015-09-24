@@ -33,6 +33,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'junegunn/limelight.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -82,11 +84,8 @@ set backspace=indent,eol,start
 if &t_Co >= 256 || has("gui_running")
 	colorscheme vividchalk
 	autocmd ColorScheme vividchalk  highlight Search cterm=NONE ctermfg=grey ctermbg=blue
-endif
-if &t_Co > 2 || has("gui_running")
 	syntax on
 endif
-set ignorecase
 " :WP Command runs this
 func! WordProcessorMode() 
   setlocal formatoptions+=t
@@ -101,6 +100,7 @@ func! WordProcessorMode()
   setlocal tw=80
   nnoremap j gj
   nnoremap k gk
+  set ignorecase
 endfu 
 com! WP call WordProcessorMode()
 " Crunch multi line text into single line
@@ -228,3 +228,8 @@ autocmd Filetype ruby setlocal ts=2 sts=2 sw=2 expandtab
 " Press Space to turn off highlighting and clear any message already
 " displayed.
 :nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+
+" Limelight setup
+" Color name (:help cterm-colors) or ANSI code
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
