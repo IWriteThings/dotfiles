@@ -6,6 +6,7 @@ http://www.macalope.com/feed/ apple
 http://www.macdrifter.com/feeds/all.atom.xml apple
 http://www.apple.com/main/rss/hotnews/hotnews.rss apple
 http://lowendmac.com/feed/ apple
+http://daringfireball.net/feeds/main
 # Wordpress
 http://wpdevel.wordpress.com/feed/ wordpress
 http://planet.wordpress.org/feed/ wordpress
@@ -30,13 +31,14 @@ https://www.raspberrypi.org/feed/
 # GitHub Users
 https://github.com/IWriteThings.atom
 http://iwritethings.github.io/feed.xml
-https://github.com/twbs.atom
 # Security
 https://www.schneier.com/blog/atom.xml security
 http://www.intego.com/mac-security-blog/feed/ security
 https://tommcfarlin.com/feed/ security
 http://www.darkreading.com/rss_simple.asp
 https://threatpost.com/feed/
+http://blog.crowdstrike.com/feed
+https://hackaday.com/blog/feed/
 # Ubuntu & Linux
 http://feeds.feedburner.com/ubuntu-news linux
 http://www.linux.com/feeds/all-content linux
