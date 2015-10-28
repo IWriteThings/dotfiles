@@ -27,6 +27,8 @@ alias tarup='tar -cvzf'
 # Check if running or get PID
 alias spock="ps -clf | grep $i"
 alias phaser="kill -9 $i"
+#Perform a site test using ApacheBench / Benchmarks for speed
+#ab -n $i -c $ "http://www.chandlerpd.com/"
 # Add HUB as an overlay to Git
 # https://github.com/github/hub
 eval "$(hub alias -s)"
