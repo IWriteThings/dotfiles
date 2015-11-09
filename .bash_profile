@@ -27,8 +27,10 @@ alias tarup='tar -cvzf'
 # Check if running or get PID
 alias spock="ps -clf | grep $i"
 alias phaser="kill -9 $i"
+# Check if you have been hacked by username or email
+alias pwned="curl https://haveibeenpwned.com/api/v2/breachedaccount/"
 #Perform a site test using ApacheBench / Benchmarks for speed
-#ab -n $i -c $ "http://www.chandlerpd.com/"
+#alias bench="ab -n $i -c $i address"
 # Add HUB as an overlay to Git
 # https://github.com/github/hub
 eval "$(hub alias -s)"
