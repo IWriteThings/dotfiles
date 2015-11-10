@@ -34,6 +34,9 @@ alias pwned="curl https://haveibeenpwned.com/api/v2/breachedaccount/"
 # Add HUB as an overlay to Git
 # https://github.com/github/hub
 eval "$(hub alias -s)"
+## Use this to clone all of the repositories for a user.
+# USER=IWriteThings;PAGE=1; curl "https://api.github.com/users/$USER/repos?page=$PAGE&per_page=100" | grep -e 'git_url*' | cut -d \" -f 4 | xargs -L1 git clone
+
 
 # If exists, load bash_aliases
 if [ -f ~/.bash_aliases ]; then
