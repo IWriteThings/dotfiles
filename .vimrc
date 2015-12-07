@@ -59,6 +59,8 @@ set tags=tags,$HOME/.vim/mytags/framework/wptags
 set hlsearch
 set encoding=utf-8  " The encoding displayed.
 set fileencoding=utf-8  " The encoding written to file.
+" Move swap files to another directory
+set directory=~/.vim/swap
 " Folding Setup
 filetype plugin indent on
 syntax enable
