@@ -60,6 +60,10 @@ if [ "$(uname)" == "Darwin" ]; then
 	alias doupdate='brew update; brew upgrade --all; softwareupdate -a -i -v; vim +PluginUpdate +qall;freshclam; ~/.tmux/plugins/tpm/bin/update_plugins all;'
 	# Extra Stuff
 	source ~/.bash_work_aliases
+	# Setting PATH for Python 3.5
+	# The orginal version is saved in .bash_profile.pysave
+	PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
+	export PATH
 fi
 
 # Linux - Ubuntu
