@@ -35,9 +35,11 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'junegunn/limelight.vim'
+Plugin 'kchmck/vim-coffee-script'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+syntax enable
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
@@ -62,8 +64,6 @@ set fileencoding=utf-8  " The encoding written to file.
 " Move swap files to another directory
 set directory=~/.vim/swap
 " Folding Setup
-filetype plugin indent on
-syntax enable
 set nocompatible
 let php_folding=1
 let javaScript_fold=1
@@ -235,3 +235,6 @@ autocmd Filetype ruby setlocal ts=2 sts=2 sw=2 expandtab
 " Color name (:help cterm-colors) or ANSI code
 let g:limelight_conceal_ctermfg = 'gray'
 let g:limelight_conceal_ctermfg = 240
+
+" Autocompile any coffee scripts
+autocmd BufWritePost *.coffee silent make!
