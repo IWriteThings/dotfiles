@@ -90,7 +90,8 @@ if &t_Co >= 256 || has("gui_running")
 endif
 " :WP Command runs this
 func! WordProcessorMode() 
-  setlocal formatoptions+=t
+  setlocal formatoptions+=ta
+  setlocal tw=79
   setlocal noexpandtab 
   setlocal spell spelllang=en_us 
   setlocal spellfile=$HOME/.vim/spell/en.utf-8.add
@@ -99,7 +100,6 @@ func! WordProcessorMode()
   setlocal complete+=s
   setlocal formatprg=par
   setlocal tabstop=5
-  setlocal tw=80
   nnoremap j gj
   nnoremap k gk
   set ignorecase
