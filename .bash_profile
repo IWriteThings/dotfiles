@@ -85,6 +85,8 @@ if [ "$(uname)" == "Linux" ]; then
 	# Use xclip like pbcopy under the mac
 	alias pbcopy='xclip -selection clipboard'
 	alias pbpaste='xclip -selection clipboard -o'
+	source ~/.bash_work_aliases
+	export PATH="$PATH:$GOPATH/bin"
 fi
 
 # Add the GOPATH since some of my tools use GO
