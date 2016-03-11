@@ -1,0 +1,10 @@
+[user]
+	name = My Name 
+	email = myemail@example.com
+[push]
+	default = simple
+# Add the diff file to /usr/local/bin
+[diff]
+	external = git-diff-wrapper
+[core]
+	quotepath = false

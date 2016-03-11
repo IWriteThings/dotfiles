@@ -12,30 +12,32 @@ Plugin 'gmarik/Vundle.vim'
 
 " Managed Plugins
 Plugin 'bling/vim-airline'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Valloric/MatchTagAlways'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-scripts/LanguageTool'
+Plugin 'beloglazov/vim-online-thesaurus'
 Plugin 'rizzatti/dash.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'mhinz/vim-signify'
-Plugin 'beloglazov/vim-online-thesaurus'
 Plugin 'Raimondi/delimitMate'
 Plugin 'godlygeek/tabular'
 Plugin 'joonty/vdebug'
 Plugin 'kien/ctrlp.vim'
-Plugin 'flazz/vim-colorschemes'
 Plugin 'vim-scripts/CycleColor'
 Plugin 'tobyS/skeletons.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'junegunn/limelight.vim'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'ledger/vim-ledger'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -82,6 +84,10 @@ set autoindent
 set number
 set pastetoggle=<F2>
 set backspace=indent,eol,start
+" Enable a color column
+set colorcolumn=80
+" More tabs
+set tabpagemax=50
 " Syntax highlight
 if &t_Co >= 256 || has("gui_running")
 	colorscheme vividchalk
@@ -112,10 +118,6 @@ function! Crunch() abort
 	g/^./ .,/^$/-1 join
 endfunction
 com! CRUNCH call Crunch()
-" Enable a color column
-set colorcolumn=80
-" More tabs
-set tabpagemax=50
 " Add the language tool
 let g:languagetool_jar='~/.vim/LanguageTool/languagetool-commandline.jar'
 " Twiddle Case
@@ -172,7 +174,6 @@ let g:mta_filetypes = {
     \ 'html' : 1,
     \ 'xhtml' : 1,
     \ 'xml' : 1,
-    \ 'jinja' : 1,
     \ 'php' : 1,
 \}
 
@@ -238,3 +239,14 @@ let g:limelight_conceal_ctermfg = 240
 
 " Autocompile any coffee scripts
 autocmd BufWritePost *.coffee silent make!
+
+" Trying to setup xdebug in VIM.
+" Currently have to use xdebug_break function.
+if !exists("g:vdebug_options")
+    let g:vdebug_options = {}
+endif
+let g:vdebug_options["break_on_open"]=0
+let g:vdebug_options['remote_path'] = '/var/www/projects/'
+let g:vdebug_options['local_path'] = '/Users/aaron/Applications/developer-vagrant/projects/'
+let g:vdebug_options["debug_file"]='~/vdebug.log'
+let g:vdebug_options["debug_file_level"]=2
