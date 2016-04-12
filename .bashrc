@@ -33,3 +33,11 @@ shopt -s checkwinsize
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 source ~/.bash_profile
+
+if [ "$(uname)" == "Darwin" ]; then
+	PATH="/Users/aaron/perl5/bin${PATH+:}${PATH}"; export PATH;
+	PERL5LIB="/Users/aaron/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
+	PERL_LOCAL_LIB_ROOT="/Users/aaron/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
+	PERL_MB_OPT="--install_base \"/Users/aaron/perl5\""; export PERL_MB_OPT;
+	PERL_MM_OPT="INSTALL_BASE=/Users/aaron/perl5"; export PERL_MM_OPT;
+fi
