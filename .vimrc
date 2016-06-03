@@ -65,6 +65,7 @@ set encoding=utf-8  " The encoding displayed.
 set fileencoding=utf-8  " The encoding written to file.
 " Move swap files to another directory
 set directory=~/.vim/swap
+set clipboard=unnamedplus
 " Folding Setup
 set nocompatible
 let php_folding=1
