@@ -97,6 +97,7 @@ if &t_Co >= 256 || has("gui_running")
 endif
 " :WP Command runs this
 func! WordProcessorMode() 
+  setlocal printoptions=number:y
   setlocal formatoptions+=ta
   setlocal tw=79
   setlocal noexpandtab 
