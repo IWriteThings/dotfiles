@@ -64,6 +64,8 @@ if [ "$(uname)" == "Darwin" ]; then
 	# The orginal version is saved in .bash_profile.pysave
 	PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
 	export PATH
+	# OPAM configuration
+	. /Users/aaron/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
 fi
 
 # Linux - Ubuntu
