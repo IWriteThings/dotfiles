@@ -65,6 +65,7 @@ set encoding=utf-8  " The encoding displayed.
 set fileencoding=utf-8  " The encoding written to file.
 " Move swap files to another directory
 set directory=~/.vim/swap
+set clipboard=unnamedplus
 " Folding Setup
 set nocompatible
 let php_folding=1
@@ -96,6 +97,7 @@ if &t_Co >= 256 || has("gui_running")
 endif
 " :WP Command runs this
 func! WordProcessorMode() 
+  setlocal printoptions=number:y
   setlocal formatoptions+=ta
   setlocal tw=79
   setlocal noexpandtab 
