@@ -119,3 +119,5 @@ http://feeds.marketwatch.com/marketwatch/realtimeheadlines/
 http://feeds.marketwatch.com/marketwatch/bulletins
 http://feeds.marketwatch.com/marketwatch/marketpulse/
 http://feeds.marketwatch.com/marketwatch/pf/
+# SEC
+http://www.sec.gov/rss/litigation/litreleases.xml
