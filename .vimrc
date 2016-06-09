@@ -65,7 +65,7 @@ set encoding=utf-8  " The encoding displayed.
 set fileencoding=utf-8  " The encoding written to file.
 " Move swap files to another directory
 set directory=~/.vim/swap
-set clipboard=unnamedplus
+" set clipboard=unnamedplus
 " Folding Setup
 set nocompatible
 let php_folding=1
@@ -242,13 +242,12 @@ let g:limelight_conceal_ctermfg = 240
 " Autocompile any coffee scripts
 autocmd BufWritePost *.coffee silent make!
 
-" Trying to setup xdebug in VIM.
-" Currently have to use xdebug_break function.
+" Xdebug setup
 if !exists("g:vdebug_options")
     let g:vdebug_options = {}
 endif
 let g:vdebug_options["break_on_open"]=0
-let g:vdebug_options['remote_path'] = '/var/www/projects/'
-let g:vdebug_options['local_path'] = '/Users/aaron/Applications/developer-vagrant/projects/'
-let g:vdebug_options["debug_file"]='~/vdebug.log'
+let g:vdebug_options['path_maps'] = {"/var/www/projects/": "/Users/aaron/Applications/developer-vagrant/projects/"}
+let g:vdebug_options["debug_file"]='~/.vim/log/vdebug.log'
 let g:vdebug_options["debug_file_level"]=2
+let g:vdebug_options["ide_key"]='vagrant'
