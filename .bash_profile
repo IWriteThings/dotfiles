@@ -87,6 +87,7 @@ if [ "$(uname)" == "Linux" ]; then
 	alias pbpaste='xclip -selection clipboard -o'
 	source ~/.bash_work_aliases
 	export PATH="$PATH:$GOPATH/bin"
+	alias irssi='TERM=screen-256color irssi'
 fi
 
 # Add the GOPATH since some of my tools use GO
