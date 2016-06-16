@@ -38,6 +38,7 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'junegunn/limelight.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'ledger/vim-ledger'
+Plugin 'vim-scripts/bats.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
