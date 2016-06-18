@@ -88,6 +88,7 @@ if [ "$(uname)" == "Linux" ]; then
 	source ~/.bash_work_aliases
 	export PATH="$PATH:$GOPATH/bin"
 	alias irssi='TERM=screen-256color irssi'
+	alias open='xdg-open'
 fi
 
 # Add the GOPATH since some of my tools use GO
