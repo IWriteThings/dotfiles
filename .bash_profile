@@ -7,10 +7,8 @@ source ~/.bash_functions
 # Source prompt and color
 source ~/.bash_prompt
 
-# Start TMUX on all
 # If not running interactively, do not do anything
 [[ $- != *i* ]] && return
-[[ -z "$TMUX" ]] && exec tmux -2
 
 # Aliases
 alias ..='cd ..'
@@ -27,8 +25,6 @@ alias tarup='tar -cvzf'
 # Check if running or get PID
 alias spock="ps -clf | grep $i"
 alias phaser="kill -9 $i"
-# Check if you have been hacked by username or email
-alias pwned="curl https://haveibeenpwned.com/api/v2/breachedaccount/"
 #Perform a site test using ApacheBench / Benchmarks for speed
 #alias bench="ab -n $i -c $i address"
 # Add HUB as an overlay to Git
@@ -71,7 +67,6 @@ fi
 # Linux - Ubuntu
 # Linux boxes need love too
 if [ "$(uname)" == "Linux" ]; then
-	export TERM="xterm-256color"
 	eval `dircolors ~/.dircolors`
 	# Colorize this thing
 	alias ls='ls --color=auto'
