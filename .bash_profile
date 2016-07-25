@@ -66,6 +66,7 @@ if [ "$(uname)" == "Darwin" ]; then
 	export PATH
 	# OPAM configuration
 	. /Users/aaron/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
+	alias pass="open ~/Dropbox/keypass/keepass.kdbx"
 fi
 
 # Linux - Ubuntu

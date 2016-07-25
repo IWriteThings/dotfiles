@@ -39,6 +39,8 @@ Plugin 'junegunn/limelight.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'ledger/vim-ledger'
 Plugin 'vim-scripts/bats.vim'
+Plugin 'chrisbra/csv.vim'
+Plugin 'scrooloose/syntastic'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -252,3 +254,14 @@ let g:vdebug_options['path_maps'] = {"/var/www/projects/": "/Users/aaron/Applica
 let g:vdebug_options["debug_file"]='~/.vim/log/vdebug.log'
 let g:vdebug_options["debug_file_level"]=2
 let g:vdebug_options["ide_key"]='vagrant'
+
+" Syntastic
+" Set the default standards for phpcs using the below command
+" $ phpcs --config-set default_standard Squiz
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
