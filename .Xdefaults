@@ -60,8 +60,15 @@ URxvt.lineSpace:            0
 
 ! Fonts
 URxvt.allow_bold:           false
-URxvt*font: xft:Droid Sans Mono For Powerline:pixelsize=24,style=regular
-URxvt*boldFont: xft:Droid Sans Mono For Powerline:pixelsize=24,style=bold
+URxvt.font: xft:Droid Sans Mono for Powerline:pixelsize=26:antialias=true:hinting=true
+URxvt.boldFont: xft:Droid Sans Mono for Powerline:bold:pixelsize=26:antialias=true:hinting=true
+URxvt.italicFont: xft:Droid Sans Mono for Powerline:italic:pixelsize=26:antialias=true:hinting=true
+URxvt.boldItalicFont: xft:Droid Sans Mono for Powerline:bold:italic:pixelsize=26:antialias=true
+
+! Bind C-0, C-+ and C-= to activate medium, big and small font size respectively.
+URxvt.keysym.C-minus: command:\033]710;xft:Droid Sans Mono for Powerline:pixelsize=20:antialias=true:hinting=true\007
+URxvt.keysym.C-0: command:\033]710;xft:Droid Sans Mono for Powerline:pixelsize=26:antialias=true:hinting=true\007
+URxvt.keysym.C-equal: command:\033]710;xft:Droid Sans Mono for Powerline:pixelsize=36:antialias=true:hinting=true\007
 
 ! Fix font space
 URxvt*letterSpace: -1
