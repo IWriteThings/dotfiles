@@ -67,6 +67,9 @@ if [ "$(uname)" == "Darwin" ]; then
 	# OPAM configuration
 	. /Users/aaron/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
 	alias pass="open ~/Dropbox/keypass/keepass.kdbx"
+	export WP_CLI_PHP="/usr/local/bin/php"
+	eval "$(docker-machine env default)"
+	export PATH="$PATH:$GOPATH/bin"
 fi
 
 # Linux - Ubuntu
