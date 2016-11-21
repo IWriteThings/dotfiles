@@ -41,6 +41,7 @@ Plugin 'ledger/vim-ledger'
 Plugin 'vim-scripts/bats.vim'
 Plugin 'chrisbra/csv.vim'
 Plugin 'scrooloose/syntastic'
+Plugin 'seanyeh/gopher.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
