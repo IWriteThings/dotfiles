@@ -10,7 +10,6 @@ source ~/.bash_prompt
 # Start TMUX on all
 # If not running interactively, do not do anything
 [[ $- != *i* ]] && return
-[[ -z "$TMUX" ]] && exec tmux -2
 
 # Aliases
 alias ..='cd ..'
@@ -46,6 +45,7 @@ fi
 # Darwin - Macintosh - Apple
 # If we are running on Mac, we need to do Mac things.
 if [ "$(uname)" == "Darwin" ]; then
+	export TERM="xterm-256color"
 	# Allow bash completion with brew
 	if [ -f `brew --prefix`/etc/bash_completion ]; then
 		    . `brew --prefix`/etc/bash_completion
@@ -66,7 +66,7 @@ if [ "$(uname)" == "Darwin" ]; then
 	export PATH
 	# OPAM configuration
 	. /Users/aaron/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
-	alias pass="open ~/Dropbox/keypass/keepass.kdbx"
+	alias pass="open /Users/aaron/ownCloud/Documents/keepass/keepass.kdbx"
 	export WP_CLI_PHP="/usr/local/bin/php"
 	eval "$(docker-machine env default)"
 	export PATH="$PATH:$GOPATH/bin"
@@ -97,3 +97,4 @@ fi
 
 # Add the GOPATH since some of my tools use GO
 export GOPATH=$HOME/.gocode
+export PATH="/usr/local/sbin:$PATH"
