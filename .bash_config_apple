@@ -1,0 +1,30 @@
+export TERM="xterm-256color"
+# Allow bash completion with brew
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+		. `brew --prefix`/etc/bash_completion
+fi
+# Get rid of the homebrew icon
+export HOMEBREW_NO_EMOJI=1
+# Set the vim installed by homebrew as our editor of choice
+export EDITOR=/usr/local/bin/vim
+# initialize jenv for managing multiple environments
+eval "$(jenv init -)"
+# Run all updates for Mac
+alias doupdate='brew update; brew upgrade --all; softwareupdate -a -i -v; vim +PluginUpdate +qall;freshclam; ~/.tmux/plugins/tpm/bin/update_plugins all;'
+# Extra Stuff
+source ~/.bash_work_aliases
+# Setting PATH for Python 3.5
+# The orginal version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
+export PATH
+# OPAM configuration
+. /Users/aaron/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
+alias pass="open /Users/aaron/ownCloud/Documents/keepass/keepass.kdbx"
+export WP_CLI_PHP="/usr/local/bin/php"
+eval "$(docker-machine env default)"
+export PATH="$PATH:$GOPATH/bin"
+PATH="/Users/aaron/perl5/bin${PATH+:}${PATH}"; export PATH;
+PERL5LIB="/Users/aaron/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/Users/aaron/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/Users/aaron/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/aaron/perl5"; export PERL_MM_OPT;
