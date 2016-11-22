@@ -17,9 +17,6 @@ alias phaser="kill -9 $i"
 alias pwned="curl https://haveibeenpwned.com/api/v2/breachedaccount/"
 #Perform a site test using ApacheBench / Benchmarks for speed
 #alias bench="ab -n $i -c $i address"
-# Add HUB as an overlay to Git
-# https://github.com/github/hub
-eval "$(hub alias -s)"
 ## Use this to clone all of the repositories for a user.
 # USER=IWriteThings;PAGE=1; curl "https://api.github.com/users/$USER/repos?page=$PAGE&per_page=100" | grep -e 'git_url*' | cut -d \" -f 4 | xargs -L1 git clone
 # Add an "alert" alias for long running commands.  Use like so:
