@@ -28,3 +28,6 @@ PERL5LIB="/Users/aaron/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB
 PERL_LOCAL_LIB_ROOT="/Users/aaron/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/Users/aaron/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/aaron/perl5"; export PERL_MM_OPT;
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH=$PATH:/usr/local/opt/go/libexec/bin # For Go Get
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
