@@ -10,7 +10,11 @@ esac
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
+	source /etc/bashrc
+fi
+
+if [ -f ~/.bash_profile ]; then
+	source ~/.bash_profile
 fi
 
 # don't put duplicate lines or lines starting with space in the history.
@@ -27,17 +31,3 @@ HISTFILESIZE=2000
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
-source ~/.bash_profile
-
-if [ "$(uname)" == "Darwin" ]; then
-	PATH="/Users/aaron/perl5/bin${PATH+:}${PATH}"; export PATH;
-	PERL5LIB="/Users/aaron/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
-	PERL_LOCAL_LIB_ROOT="/Users/aaron/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
-	PERL_MB_OPT="--install_base \"/Users/aaron/perl5\""; export PERL_MB_OPT;
-	PERL_MM_OPT="INSTALL_BASE=/Users/aaron/perl5"; export PERL_MM_OPT;
-fi
