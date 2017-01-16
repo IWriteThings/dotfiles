@@ -83,6 +83,8 @@ if [ "$(uname)" == "Linux" ]; then
 	# Use xclip like pbcopy under the mac
 	alias pbcopy='xclip -selection clipboard'
 	alias pbpaste='xclip -selection clipboard -o'
+	alias firefox='firejail firefox'
+	alias tbrowser='docker run -i -t --rm -e DISPLAY=:0.0 -v /tmp/.X11-unix:/tmp/.X11-unix:ro iwritethings/torbrowser'
 	source ~/.bash_work_aliases
 	export PATH="$PATH:$GOPATH/bin"
 fi
