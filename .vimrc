@@ -31,6 +31,7 @@ Plugin 'vim-scripts/CycleColor'
 Plugin 'tobyS/skeletons.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'ervandew/supertab'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'terryma/vim-multiple-cursors'
@@ -39,6 +40,10 @@ Plugin 'junegunn/limelight.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'ledger/vim-ledger'
 Plugin 'vim-scripts/bats.vim'
+Plugin 'chrisbra/csv.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'nvie/vim-flake8'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -165,7 +170,7 @@ highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Re
 highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
 
 " Insert the date and time at the cursor
-inoremap <expr> <C-f> strftime('%y-%m-%d %H:%M:%S')
+inoremap <expr> <C-f> strftime('%Y-%m-%dT%H:%M:%S-07:00')
 
 " Auto Create PHP Doc
 au BufRead,BufNewFile *.php inoremap <buffer> <C-P> :call PhpDoc()<CR>
@@ -190,11 +195,13 @@ let g:gitgutter_max_signs = 1000
 " Skeletons
 let g:skeletons_dir='~/.vim/bundle/skeletons.vim/skeletons/.'
 
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<c-l>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
+let g:SuperTabDefaultCompletionType    = '<C-n>'
+let g:SuperTabCrMapping                = 0
+let g:UltiSnipsExpandTrigger           = '<tab>'
+let g:UltiSnipsJumpForwardTrigger      = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
+let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
@@ -252,3 +259,25 @@ let g:vdebug_options['path_maps'] = {"/var/www/projects/": "/Users/aaron/Applica
 let g:vdebug_options["debug_file"]='~/.vim/log/vdebug.log'
 let g:vdebug_options["debug_file_level"]=2
 let g:vdebug_options["ide_key"]='vagrant'
+
+" Syntastic
+" Set the default standards for phpcs using the below command
+" $ phpcs --config-set default_standard Squiz
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" Python Development
+au BufNewFile,BufRead *.py
+	\set tabstop=4
+	\set softtabstop=4
+	\set shiftwidth=4
+	\set textwidth=79
+	\set expandtab
+	\set autoindent
+	\set fileformat=unix
+let python_highlight_all=1
