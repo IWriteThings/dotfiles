@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<ruleset name="PHP Standard">
+	<description>My PHP standards for development..</description>
+
+	<!-- By default run the sniffer on everything in this directory -->
+	<file>./web/app/</file>
+
+	<!-- Now exclude these directories -->
+	<exclude-pattern>./web/app/plugins/enable-media-replace</exclude-pattern>
+	<exclude-pattern>./web/app/plugins/searchwp</exclude-pattern>
+	<exclude-pattern>./web/app/plugins/facetwp</exclude-pattern>
+	<exclude-pattern>./web/app/plugins/mce-table-buttons</exclude-pattern>
+	<exclude-pattern>./web/app/plugins/query-monitor</exclude-pattern>
+	<exclude-pattern>./web/app/plugins/plugin-toggle</exclude-pattern>
+	<exclude-pattern>./web/app/plugins/the-events-calendar</exclude-pattern>
+	<exclude-pattern>./web/app/plugins/tinymce-spellcheck</exclude-pattern>
+	<exclude-pattern>./web/app/plugins/user-switching</exclude-pattern>
+	<exclude-pattern>./web/app/plugins/pdinfo-splunk/inc/Splunk</exclude-pattern>
+	<exclude-pattern>./web/app/plugins/pdinfo-intel-notifications/lib</exclude-pattern>
+	<exclude-pattern>./web/app/plugins/wordpress-importer</exclude-pattern>
+	<exclude-pattern>./web/app/employee-files/</exclude-pattern>
+	<exclude-pattern>./web/app/mu-plugins</exclude-pattern>
+	<exclude-pattern>./web/app/uploads</exclude-pattern>
+	<exclude-pattern>./web/app/upgrade</exclude-pattern>
+
+	<!-- Use the WordPress standards -->
+	<rule ref="WordPress-Core"/>
+	<rule ref="WordPress-Docs"/>
+	<rule ref="WordPress-Extra"/>
+	<rule ref="WordPress-VIP"/>
+
+	<!-- We don't need a doc block for each file -->
+	<rule ref="Squiz.Commenting.FileComment.Missing">
+		<exclude name="Squiz.Commenting.FileComment.Missing"/>
+	</rule>
+
+	<!-- Don't require the content to be on a new line when used with a closing brace -->
+	<rule ref="Squiz.WhiteSpace.ScopeClosingBrace.ContentBefore">
+		<exclude name="Squiz.WhiteSpace.ScopeClosingBrace.ContentBefore"/>
+	</rule>
+
+	<!-- Prevent the php tags from moving over too far to the left -->
+	<rule ref="Squiz.PHP.EmbeddedPhp.OpenTagIndent">
+		<exclude name="Squiz.PHP.EmbeddedPhp.OpenTagIndent"/>
+	</rule>
+
+	<!-- No capitals!! -->
+	<rule ref="Squiz.Commenting.InlineComment.NotCapital">
+		<exclude name="Squiz.Commenting.InlineComment.NotCapital"/>
+	</rule>
+
+	<!-- Don't require puncuation at the end of the inline comment -->
+	<rule ref="Squiz.Commenting.InlineComment.InvalidEndChar">
+		<exclude name="Squiz.Commenting.InlineComment.InvalidEndChar"/>
+	</rule>
+
+	<!-- Remove the sniffs for VIP restricted functions -->
+	<!-- We don't use VIP and can't access the functions suggested -->
+	<rule ref="WordPress.VIP.RestrictedFunctions">
+		<exclude name="WordPress.VIP.RestrictedFunctions"/>
+	</rule>
+	<rule ref="Generic.Files.LineLength.TooLong">
+		<message>Your line is too long at %2$s characters.</message>
+	</rule>
+	<rule ref="Generic.Files.LineLength.MaxExceeded">
+		<message>Hold your horses. Try and keep it under %1$s characters.</message>
+	</rule>
+	<rule ref="Generic.Files.LineLength">
+		<properties>
+			<property name="lineLimit" value="120"/>
+			<property name="absoluteLineLimit" value="135"/>
+		</properties>
+	</rule>
+</ruleset>
