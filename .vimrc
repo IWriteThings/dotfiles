@@ -42,6 +42,8 @@ Plugin 'ledger/vim-ledger'
 Plugin 'vim-scripts/bats.vim'
 Plugin 'chrisbra/csv.vim'
 Plugin 'scrooloose/syntastic'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'nvie/vim-flake8'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -168,7 +170,7 @@ highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Re
 highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
 
 " Insert the date and time at the cursor
-inoremap <expr> <C-f> strftime('%y-%m-%d %H:%M:%S')
+inoremap <expr> <C-f> strftime('%Y-%m-%dT%H:%M:%S-07:00')
 
 " Auto Create PHP Doc
 au BufRead,BufNewFile *.php inoremap <buffer> <C-P> :call PhpDoc()<CR>
@@ -268,3 +270,14 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" Python Development
+au BufNewFile,BufRead *.py
+	\set tabstop=4
+	\set softtabstop=4
+	\set shiftwidth=4
+	\set textwidth=79
+	\set expandtab
+	\set autoindent
+	\set fileformat=unix
+let python_highlight_all=1

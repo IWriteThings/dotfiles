@@ -15,7 +15,7 @@ alias ..='cd ..'
 alias disk='df -H'
 alias news='newsbeuter'
 ## Pull from youtube
-alias musicrip='/usr/local/bin/youtube-dl --extract-audio --audio-format mp3'
+alias musicrip='/usr/local/bin/youtube-dl --extract-audio --audio-format mp3 -o "%(title)s.%(ext)s"'
 # This can be used to trim the intro off of songs.
 # ffmpeg -ss 30 -i inputfile.mp3 -acodec copy outputfile.mp3
 #clamav
