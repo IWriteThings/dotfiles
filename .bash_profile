@@ -87,6 +87,8 @@ if [ "$(uname)" == "Linux" ]; then
 	alias tbrowser='docker run -i -t --rm -e DISPLAY=:0.0 -v /tmp/.X11-unix:/tmp/.X11-unix:ro iwritethings/torbrowser'
 	source ~/.bash_work_aliases
 	export PATH="$PATH:$GOPATH/bin"
+	alias irssi='TERM=screen-256color irssi'
+	alias open='xdg-open'
 fi
 
 # Add the GOPATH since some of my tools use GO
