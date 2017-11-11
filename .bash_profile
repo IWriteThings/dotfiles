@@ -91,3 +91,5 @@ fi
 
 # Add the GOPATH since some of my tools use GO
 export GOPATH=$HOME/.gocode
+export PTOOLSPATH=/home/aaron/Applications/phalcon-devtools/
+export PATH=$PATH:/home/aaron/Applications/phalcon-devtools
