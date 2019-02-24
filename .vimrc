@@ -12,38 +12,23 @@ Plugin 'gmarik/Vundle.vim'
 
 " Managed Plugins
 Plugin 'bling/vim-airline'
-Plugin 'flazz/vim-colorschemes'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'flazz/vim-colorschemes'
 Plugin 'Valloric/MatchTagAlways'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-scripts/LanguageTool'
 Plugin 'beloglazov/vim-online-thesaurus'
-Plugin 'rizzatti/dash.vim'
-Plugin 'editorconfig/editorconfig-vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'mhinz/vim-signify'
 Plugin 'Raimondi/delimitMate'
 Plugin 'godlygeek/tabular'
 Plugin 'joonty/vdebug'
-Plugin 'kien/ctrlp.vim'
-Plugin 'vim-scripts/CycleColor'
-Plugin 'tobyS/skeletons.vim'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
 Plugin 'ervandew/supertab'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'junegunn/limelight.vim'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'ledger/vim-ledger'
-Plugin 'vim-scripts/bats.vim'
 Plugin 'chrisbra/csv.vim'
 Plugin 'scrooloose/syntastic'
-Plugin 'vim-scripts/indentpython.vim'
-Plugin 'nvie/vim-flake8'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -65,6 +50,7 @@ filetype plugin indent on    " required
 " Adds the wordpress tags to omnicomplete
 " Run 'ctags -R . ' in WP directory on each update
 " Get ctags if you don't have it
+set shell=/bin/bash
 set tags=tags,$HOME/.vim/mytags/framework/wptags
 set hlsearch
 set encoding=utf-8  " The encoding displayed.
@@ -147,10 +133,6 @@ let g:airline#extensions#branch#enabled=1
 let g:airline#extensions#whitespace#enabled=0
 let g:airline_theme='simple'
 let g:airline_powerline_fonts=1
-" Set powerline fonts for windows under gvim
-if has("win32")
-	set guifont=Droid_Sans_Mono_for_powerline:h14
-endif
 " Airline initial setup
 function! AirlineInit()
 	let g:airline_section_a = airline#section#create(['mode',' ', 'branch'])
@@ -160,9 +142,6 @@ function! AirlineInit()
 	let g:airline_section_y = airline#section#create([' ','hunks','%f'])
 endfunction
 autocmd VimEnter * call AirlineInit()
-" Add syntax highlighting for Chuck programming language
-au BufNewFile,BufRead *.ck setf ck
-
 " Add different coloring to my vim diff
 highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
 highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
@@ -191,10 +170,6 @@ nnoremap <S-t> :OnlineThesaurusCurrentWord<CR>
 
 " GitGutter Settings
 let g:gitgutter_max_signs = 1000
-
-" Skeletons
-let g:skeletons_dir='~/.vim/bundle/skeletons.vim/skeletons/.'
-
 let g:SuperTabDefaultCompletionType    = '<C-n>'
 let g:SuperTabCrMapping                = 0
 let g:UltiSnipsExpandTrigger           = '<tab>'
@@ -205,50 +180,13 @@ let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
-" Nerdtree
-map <C-N> :NERDTreeToggle<CR>
-"autocmd vimenter * NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-" NERDTress File highlighting
-function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
- exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
- exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
-endfunction
-call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
-call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
-call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
-call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
-call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
-call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
-call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
-
 " YouCompleteMe
 " :set ft? to get filetype
-let g:ycm_filetype_blacklist = {
-      \ 'plaintex' : 1
-      \}
-
-" RUBY STUFF
-" Change the tab behavior for ruby files
-autocmd Filetype ruby setlocal ts=2 sts=2 sw=2 expandtab
+let g:ycm_filetype_blacklist = { 'plaintex' : 1, 'csv' : 1 }
 
 " Press Space to turn off highlighting and clear any message already
 " displayed.
 :nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
-
-" Limelight setup
-" Color name (:help cterm-colors) or ANSI code
-let g:limelight_conceal_ctermfg = 'gray'
-let g:limelight_conceal_ctermfg = 240
-
-" Autocompile any coffee scripts
-autocmd BufWritePost *.coffee silent make!
 
 " Xdebug setup
 if !exists("g:vdebug_options")
@@ -272,12 +210,8 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 " Python Development
-au BufNewFile,BufRead *.py
-	\set tabstop=4
-	\set softtabstop=4
-	\set shiftwidth=4
-	\set textwidth=79
-	\set expandtab
-	\set autoindent
-	\set fileformat=unix
+autocmd Filetype python setlocal ts=2 sts=2 sw=2 expandtab autoindent
 let python_highlight_all=1
+
+" Change the tab behavior for ruby files
+autocmd Filetype ruby setlocal ts=2 sts=2 sw=2 expandtab autoindent
